@@ -1,0 +1,10 @@
+<h1>Task List</h1>
+<div class="card" style="width: 18rem;">
+  <ul class="list-group list-group-flush">
+    <% @tasks.each do |task| %>
+      <li class="list-group-item">#<%= task.id %> | <%= task.completed ? "✅" : "❎" %> | <%= link_to task.title, task_path(task) %></a></li>
+    <% end %>
+  </ul>
+</div>
+
+<%= link_to "Add new", new_task_path %>
